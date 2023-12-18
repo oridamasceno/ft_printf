@@ -6,15 +6,15 @@
 #    By: oridamasceno <marvin@42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/18 19:30:00 by oridamasceno      #+#    #+#              #
-#    Updated: 2023/12/18 19:30:15 by oridamasceno     ###   ########.fr        #
+#    Updated: 2023/12/18 20:13:47 by oridamasceno     ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = ft_libftprintf.a
 
 SOURCES = ./sources/ft_printf.c \
-	  	./sources/ft_numbers.c \
-		./sources/ft_words.c \
+	  	./sources/ft_numerical.c \
+		./sources/ft_letters.c \
 
 
 OBJECTS = ${SOURCES: .c=.0}
