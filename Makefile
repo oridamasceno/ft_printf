@@ -1,7 +1,20 @@
-NAME = ft_printf.a
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: oridamasceno <marvin@42.fr>                +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2023/12/18 19:30:00 by oridamasceno      #+#    #+#              #
+#    Updated: 2023/12/18 19:30:15 by oridamasceno     ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
 
-SOURCES = ft_putchar.c ft_putnbr.c ft_putstr.c
+NAME = ft_libftprintf.a
 
+SOURCES = ./sources/ft_printf.c \
+	  	./sources/ft_numbers.c \
+		./sources/ft_words.c \
 
 
 OBJECTS = ${SOURCES: .c=.0}
@@ -32,4 +45,3 @@ fclean: clean
 re: fclean all
 
 .PHONY: all clean fclean re
-
