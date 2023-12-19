@@ -3,14 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_letters.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: oridamasceno <marvin@42.fr>                +#+  +:+       +#+        */
+/*   By: ledamasc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/18 20:01:02 by oridamasceno      #+#    #+#             */
-/*   Updated: 2023/12/18 20:10:50 by oridamasceno     ###   ########.fr       */
+/*   Created: 2023/12/19 19:26:13 by ledamasc          #+#    #+#             */
+/*   Updated: 2023/12/19 19:37:19 by ledamasc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "../includes/ft_printf.h"
+#include "ft_printf.h"
 
 void	ft_putchar_len(char character, int *len)
 {
@@ -31,7 +30,7 @@ void	ft_string(char *args, int *len)
 	}
 	while (args[i] != '\0')
 	{
-		ft_putchar_leng(args[i], len);
+		ft_putchar_len(args[i], len);
 		i++;
 	}
 }

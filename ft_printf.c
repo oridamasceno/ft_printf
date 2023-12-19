@@ -3,16 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: oridamasceno <marvin@42.fr>                +#+  +:+       +#+        */
+/*   By: ledamasc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/18 19:50:50 by oridamasceno      #+#    #+#             */
-/*   Updated: 2023/12/18 20:11:42 by oridamasceno     ###   ########.fr       */
+/*   Created: 2023/12/19 19:26:39 by ledamasc          #+#    #+#             */
+/*   Updated: 2023/12/19 19:38:28 by ledamasc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "ft_printf.h"
 
-include "../includes/ft_printf.h"
-
-static void	ft_printf(char s, va_list *args, int *len, int *i)
+static void	ft_printf_checker(char s, va_list *args, int *len, int *i)
 {
 	if (s == 's')
 		ft_string(va_arg(*args, char *), len);
@@ -29,7 +28,7 @@ static void	ft_printf(char s, va_list *args, int *len, int *i)
 	else if (s == 'c')
 		ft_putchar_len(va_arg(*args, int), len);
 	else if (s == '%')
-		ft_putcharacter_length('%', len);
+		ft_putchar_len('%', len);
 	else
 		(*i)--;
 }
@@ -48,7 +47,7 @@ int	ft_printf(const char *string, ...)
 		if (string[i] == '%')
 		{
 			i++;
-			ft_printf(string[i], &args, &len, &i);
+			ft_printf_checker(string[i], &args, &len, &i);
 			i++;
 		}
 		else

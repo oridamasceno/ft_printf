@@ -3,41 +3,41 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: oridamasceno <marvin@42.fr>                +#+  +:+       +#+         #
+#    By: ledamasc <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/12/18 19:30:00 by oridamasceno      #+#    #+#              #
-#    Updated: 2023/12/18 20:13:47 by oridamasceno     ###   ########.fr        #
+#    Created: 2023/12/19 19:19:36 by ledamasc          #+#    #+#              #
+#    Updated: 2023/12/19 19:40:47 by ledamasc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+NAME = libftprintf.a
 
-NAME = ft_libftprintf.a
-
-SOURCES = ./sources/ft_printf.c \
-	  	./sources/ft_numerical.c \
-		./sources/ft_letters.c \
+SOURCES = ft_printf.c \
+	  ft_numerical.c \
+	  ft_letters.c \
 
 
-OBJECTS = ${SOURCES: .c=.0}
+OBJECTS = ${SOURCES:.c=.o}
 
 RM = @rm -f
 
 CC = cc
 
-CFLAGS = -Wall Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror
 MSG1 = @echo "-------------\n42@compiled ✔︎\nMachine is working!\n-------------------"
 MSG2 = @echo "------------\n42@cleaned ✔︎\nWe cleaned the floor and now there's no .o files!\n------------------------------------------------"
 
-ARCHIVE = @ar -rcs
 
 
 
 all: ${NAME}
 
 $(NAME): ${OBJECTS}
-	${ARCHIVE} ${NAME} ${OBJECTS}
+	ar -rvs ${NAME} ${OBJECTS}
+	${MSG1}
 
 clean:
-	${RM} ${OBJCETS}
+	${RM} ${OBJECTS}
+	${MSG2}
 
 fclean: clean
 	${RM} ${NAME}

@@ -3,21 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   ft_numerical.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: oridamasceno <marvin@42.fr>                +#+  +:+       +#+        */
+/*   By: ledamasc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/18 19:30:49 by oridamasceno      #+#    #+#             */
-/*   Updated: 2023/12/18 20:10:00 by oridamasceno     ###   ########.fr       */
+/*   Created: 2023/12/19 19:26:26 by ledamasc          #+#    #+#             */
+/*   Updated: 2023/12/19 19:37:32 by ledamasc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "../includes/ft_printf.h"
+#include "ft_printf.h"
 
 void	ft_number(int number, int *len)
 {
 	if (number == -2147483648)
 	{
 		write(1, "-2147483648", 11);
-		(*len) += 11);
+		(*len) += 11;
 		return ;
 	}
 	if (number < 0)
@@ -89,6 +88,6 @@ void	ft_hexadecimal(unsigned int x, int *len, char x_or_x)
 void	ft_unsigned_int(unsigned int u, int *len)
 {
 	if (u >= 10)
-		ft_unsgined_int(u / 10, len);
+		ft_unsigned_int(u / 10, len);
 	ft_putchar_len(u % 10 + '0', len);
 }
