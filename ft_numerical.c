@@ -6,7 +6,7 @@
 /*   By: ledamasc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 19:26:26 by ledamasc          #+#    #+#             */
-/*   Updated: 2023/12/19 20:11:50 by ledamasc         ###   ########.fr       */
+/*   Updated: 2023/12/20 13:10:14 by ledamasc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf.h"
@@ -40,13 +40,13 @@ void	ft_pointer(size_t pointer, int *len)
 
 	base_char = "0123456789abcdef";
 	i = 0;
-	write(1, "0x", 2);
-	(*len) += 2;
 	if (pointer == 0)
 	{
-		ft_putchar_len('0', len);
+		(*len) += write(1, "(nil)", 5);
 		return ;
 	}
+	write(1, "0x", 2);
+	(*len) += 2;
 	while (pointer != 0)
 	{
 		string[i] = base_char[pointer % 16];
