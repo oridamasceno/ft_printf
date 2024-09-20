@@ -1,14 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: ledamasc <marvin@42.fr>                    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/19 19:26:39 by ledamasc          #+#    #+#             */
-/*   Updated: 2023/12/19 19:38:28 by ledamasc         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
 #include "ft_printf.h"
 
 static void	ft_printf_checker(char s, va_list *args, int *len, int *i)
@@ -18,17 +7,17 @@ static void	ft_printf_checker(char s, va_list *args, int *len, int *i)
 	else if (s == 'd' || s == 'i')
 		ft_number(va_arg(*args, int), len);
 	else if (s == 'u')
-		ft_unsigned_int(va_arg(*args, unsigned int), len);
+		ft_unsigned(va_arg(*args, unsigned int), len);
 	else if (s == 'x')
-		ft_hexadecimal(va_arg(*args, unsigned int), len, 'x');
+		ft_hexa(va_arg(*args, unsigned int), len, 'x');
 	else if (s == 'X')
-		ft_hexadecimal(va_arg(*args, unsigned int), len, 'X');
+		ft_hexa(va_arg(*args, unsigned int), len, 'X');
 	else if (s == 'p')
 		ft_pointer(va_arg(*args, size_t), len);
 	else if (s == 'c')
-		ft_putchar_len(va_arg(*args, int), len);
+		ft_putlen(va_arg(*args, int), len);
 	else if (s == '%')
-		ft_putchar_len('%', len);
+		ft_putlen('%', len);
 	else
 		(*i)--;
 }
@@ -52,7 +41,7 @@ int	ft_printf(const char *string, ...)
 		}
 		else
 		{
-			ft_putchar_len((char)string[i], &len);
+			ft_putlen((char)string[i], &len);
 			i++;
 		}
 	}
