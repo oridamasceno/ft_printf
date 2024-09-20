@@ -1,9 +1,6 @@
 # ft_printf
 
-## Status
-Finished: 20/12/2023. Grade: 100/100.i
-
-# A simple reimplementation of the famous C library printf function. Handles only the following conversions:
+### A simple reimplementation of the famous C library printf function. Handles only the following conversions:
 
  | Conversion | Short Description                                                                             |
  |------------|-----------------------------------------------------------------------------------------------|
@@ -16,3 +13,6 @@ Finished: 20/12/2023. Grade: 100/100.i
  | %x         | Print a number in hexadecimal (base 16), with lowercase.                                      |
  | %X         | Print a number in hexadecimal (base 16), with uppercase.                                      |
  | %%         | Print a percent sign.                                                                         |
+
+## Status
+ Finished: 20/12/2023. Grade: 100/100.i
