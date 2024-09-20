@@ -1,9 +1,8 @@
 NAME = libftprintf.a
 
-SOURCES = ft_printf.c \
-	  ft_numerical.c \
-	  ft_letters.c \
-
+SOURCES = ./sources/ft_printf.c \
+	  ./sources/ft_numerical.c \
+	  ./sources/ft_letters.c \
 
 OBJECTS = ${SOURCES:.c=.o}
 

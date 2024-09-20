@@ -1,4 +1,4 @@
-#include "ft_printf.h"
+#include "../includes/ft_printf.h"
 
 static void	ft_printf_checker(char s, va_list *args, int *len, int *i)
 {
