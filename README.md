@@ -15,4 +15,4 @@
  | %%         | Print a percent sign.                                                                         |
 
 ## Status
- Finished: 20/12/2023. Grade: 100/100.i
+Finished: 2023-12-20. Grade: 100/100.
