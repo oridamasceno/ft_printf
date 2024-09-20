@@ -1,7 +1,7 @@
 # ft_printf
 
 <p align="center">
-  <img src="https://github.com/mcombeau/mcombeau/blob/main/42_badges/ft_printfe.png" alt="ft_printf 42 project badge"/>
+  <img src="https://www.log2base2.com/images/c/print-variables.png"/>
   </p>
 
 ### A simple reimplementation of the famous C library printf function. Handles only the following conversions:
