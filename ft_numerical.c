@@ -1,14 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_numerical.c                                     :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: ledamasc <marvin@42.fr>                    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/19 19:26:26 by ledamasc          #+#    #+#             */
-/*   Updated: 2023/12/20 13:10:14 by ledamasc         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
 #include "ft_printf.h"
 
 void	ft_number(int number, int *len)
@@ -21,14 +10,14 @@ void	ft_number(int number, int *len)
 	}
 	if (number < 0)
 	{
-		ft_putchar_len('-', len);
+		ft_putlen('-', len);
 		ft_number(number * -1, len);
 	}
 	else
 	{
 		if (number > 9)
 			ft_number(number / 10, len);
-		ft_putchar_len(number % 10 + '0', len);
+		ft_putlen(number % 10 + '0', len);
 	}
 }
 
@@ -55,11 +44,11 @@ void	ft_pointer(size_t pointer, int *len)
 	}
 	while (i--)
 	{
-		ft_putchar_len(string[i], len);
+		ft_putlen(string[i], len);
 	}
 }
 
-void	ft_hexadecimal(unsigned int x, int *len, char x_or_x)
+void	ft_hexa(unsigned int x, int *len, char x_or_x)
 {
 	char	string[25];
 	char	*base_char;
@@ -72,7 +61,7 @@ void	ft_hexadecimal(unsigned int x, int *len, char x_or_x)
 	i = 0;
 	if (x == 0)
 	{
-		ft_putchar_len('0', len);
+		ft_putlen('0', len);
 		return ;
 	}
 	while (x != 0)
@@ -82,12 +71,12 @@ void	ft_hexadecimal(unsigned int x, int *len, char x_or_x)
 		i++;
 	}
 	while (i--)
-		ft_putchar_len(string[i], len);
+		ft_putlen(string[i], len);
 }
 
-void	ft_unsigned_int(unsigned int u, int *len)
+void	ft_unsigned(unsigned int u, int *len)
 {
 	if (u >= 10)
-		ft_unsigned_int(u / 10, len);
-	ft_putchar_len(u % 10 + '0', len);
+		ft_unsigned(u / 10, len);
+	ft_putlen(u % 10 + '0', len);
 }
