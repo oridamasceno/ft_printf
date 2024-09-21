@@ -18,5 +18,8 @@
  | %X         | Print a number in hexadecimal (base 16), with uppercase.                                      |
  | %%         | Print a percent sign.                                                                         |
 
-## Status
+## ✅ Status
 Finished: 2023-12-20. Grade: 100/100.
+
+### ⚠️ Keep it in mind.
+Don't copy, make your own code. My repositories are for understanding and will not necessarily be accepted by the "norminette".
