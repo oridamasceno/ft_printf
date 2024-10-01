@@ -1,4 +1,4 @@
-# ft_printf
+# printf
 
 <p align="center">
   <img src="https://www.log2base2.com/images/c/print-variables.png"/>
